@@ -12,7 +12,12 @@ const app: Express = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(cors()); // Enable CORS
+
+// Configure CORS
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
+
 
 // Open SQLite database
 const dbPromise = open({
