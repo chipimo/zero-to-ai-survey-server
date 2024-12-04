@@ -14,10 +14,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // Configure CORS
-app.use(cors({
-  origin: 'http://localhost:3000'
-}));
-
+app.use(cors());
 
 // Open SQLite database
 const dbPromise = open({
